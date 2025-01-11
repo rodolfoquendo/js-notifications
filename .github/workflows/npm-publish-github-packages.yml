@@ -8,23 +8,8 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      # - run: npm ci
-      # - run: npm test
 
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.6.0
-        with:
-          source: scss/index.scss
-          destination: dist/index.scss
-
-  publish-gpr:
+  publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -40,8 +25,8 @@ jobs:
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.6.0
         with:
-          source: _scss/main.scss
-          destination: /tmp/repo-name/assets/css/main.css
-      - run: npm publish
+          source: scss/index.scss
+          destination: dist/index.scss
+      - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
