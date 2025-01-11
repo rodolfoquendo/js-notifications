@@ -1,0 +1,20 @@
+{
+  "name": "@insignia-education/js-notifications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "sass --style=compressed --force scss/index.scss:dist/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insignia-education/js-notifications.git"
+  },
+  "author": "Insignia Education",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insignia-education/js-notifications/issues"
+  },
+  "homepage": "https://github.com/insignia-education/js-notifications#readme"
+}

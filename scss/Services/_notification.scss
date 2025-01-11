@@ -1,0 +1,26 @@
+
+$notifications_position_y: "bottom" !default;
+$notifications_y_space: 0 !default;
+$notifications_position_x: "left" !default;
+$notifications_x_space: 0 !default;
+$notifications_width: 100% !default;
+$notifications_height: auto !default;
+
+$notifications_notification_bg: #000 !default;
+$notifications_notification_color: #fff !default;
+$notifications_notification_padding: 1rem !default;
+$notifications_notification_margin: 0 !default;
+#notifications{
+    width: $notifications_width;
+    height: $notifications_height;
+    position: fixed;
+    $notifications_position_y : $notifications_y_space;
+    $notifications_position_x : $notifications_x_space;
+
+    .notification{
+        background-color: $notifications_notification_bg;
+        color: $notifications_notification_color;
+        padding: $notifications_notification_padding;
+        margin: $notifications_notification_margin;
+    }
+}

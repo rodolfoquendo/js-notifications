@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAYA,cAAc,CACV,KAAK,CARa,IAAI,CAStB,MAAM,CARa,IAAI,CASvB,QAAQ,CAAE,KAAK,CAIf,4BAAa,CACT,gBAAgB,CAZQ,IAAI,CAa5B,KAAK,CAZsB,IAAI,CAa/B,OAAO,CAZsB,IAAI,CAajC,MAAM,CAZsB,CAAC",
+"sources": ["../scss/Services/_notification.scss"],
+"names": [],
+"file": "index.css"
+}
