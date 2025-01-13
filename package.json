@@ -1,10 +1,10 @@
 {
   "name": "@insignia-education/js-notifications",
   "version": "1.0.0",
-  "description": "",
+  "description": "THIS IS DEPRECATED",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
     "build": "sass --style=compressed --force scss/index.scss:dist/index.css"
   },
   "repository": {
@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/insignia-education/js-notifications/issues"
   },
-  "homepage": "https://github.com/insignia-education/js-notifications#readme"
+  "homepage": "https://github.com/insignia-education/js-notifications#readme",
+  "dependencies": {
+    "@rodolfoquendo/js-core": "1.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2",
+    "ts-jest": "^29.2.5"
+  }
 }

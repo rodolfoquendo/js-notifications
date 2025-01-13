@@ -1,53 +1,113 @@
+import Helpers from "@insignia-education/js-core/Helpers.js";
 export default class Notification{
     NOTIFICATION_TYPE_SUCCESS = 'success';
     NOTIFICATION_TYPE_ERROR = 'error';
     NOTIFICATION_ELEMENT_ID = 'notifications';
-    #holder = null;
-    #type = null;
+    #type  = null;
     #url = null;
+    #id = null;
     #content = null;
+    #sent = false;
     static items = [];
-    
-    #getHolder(){
-        if(this.#holder === null){
-            this.#holder = document.getElementById(this.NOTIFICATION_ELEMENT_ID);
+    /**
+     * If the notification element does not exists, we create it
+     * 
+     * @author Rodolfo Oquendo <rodolfoquendo@gmail.com>
+     */
+    #setHolder(){
+        if(Helpers.is_null(document.getElementById(this.NOTIFICATION_ELEMENT_ID))){
+            document.querySelector('body').innerHTML += `<div id="${this.NOTIFICATION_ELEMENT_ID}"></div>`;
         }
-        return this.#holder;
     }
+    /**
+     * Sets the type of the notification
+     * This is just a class to be added to the DOM node 
+     * The final class is notification-${type}
+     * 
+     * @param {string} type 
+     * 
+     * @author Rodolfo Oquendo <rodolfoquendo@gmail.com>
+     */
     setType(type){
         this.#type = type;
     }
-    getType(){
-        return this.#type;
-    }
-    getUrl(){
-        if(is_null(this.#url))
-        return this.#url;
-    }
+
+    /**
+     * 
+     * @param {string} content 
+     */
     setContent(content){
         this.#content = content;
     }
+
+    #setUrl(){
+        if(Helpers.is_null(this.#url)){
+            const holder = this.#getHolder();
+            if(!Helpers.is_null(holder)){
+                this.#url = holder.getAttribute('data-url');
+            }
+        }
+    }
+
+    #getHolder(){
+        this.#setHolder();
+        return document.getElementById(this.NOTIFICATION_ELEMENT_ID);
+    }
+
+    getType(){
+        return this.#type;
+    }
+
     getContent(){
         return this.#content;
     }
+
+    getUrl(){
+        this.#setUrl();
+        return this.#url;
+    }
+
+    setID(){
+        if(Helpers.is_null(this.#id)){
+            this.#id = Notification.items.length + 1;
+        }
+    }
+    getID(){
+        this.setID();
+        return this.#id;
+    }
+
     html(){
-        return `<div class="notification" data-type="${this.getType()}" id="notification-${Notification.items.length}">
+        return `<div class="notification" data-type="${this.getType()}" id="notification-${this.getID()}">
             ${this.getContent()}
         </div>`;
     }
-    setup(){
-        if(this.#getHolder() === null){
-            document.body.innerHTML += `<div id="notifications"></div>`;
-            this.#getHolder();
+
+    get(){
+        return {
+            content: this.getContent(),
+            type: this.getType(),
         }
     }
+    
     add(){
         const holder = this.#getHolder();
         holder.innerHTML += this.html();
-        Notification.items.push(this.getContent());
+        this.addServer().finally(() => {
+            Notification.items.push(this.get());
+        });
     }
+
     addServer(){
-        
+        return Helpers.is_null(this.getUrl()) || this.#sent ? null : fetch(this.getUrl(),{
+            method: 'POST',
+            mode: 'cors', 
+            body: JSON.stringify(this.get())
+        })
+        .then(response => {
+            this.#sent = true;
+            return response;
+        });
     }
     static notify(content, type = this.NOTIFICATION_TYPE_SUCCESS){
         const notification = new Notification();
