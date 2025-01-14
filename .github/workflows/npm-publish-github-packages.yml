@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org/'
+      
+      - name: build js
+        run: npx mix --production
 
       - name: Compile SCSS
         uses: gha-utilities/sass-build@v0.6.0

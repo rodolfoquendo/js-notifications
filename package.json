@@ -1,20 +1,35 @@
 {
-  "name": "@insignia-education/js-notifications",
+  "name": "@rodolfoquendo/js-notifications",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
-    "build": "sass --style=compressed --force scss/index.scss:dist/index.css"
+    "test": "jest ",
+    "build": "sass --style=compressed --force scss/index.scss:dist/rodolfoquendo-notifications.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/insignia-education/js-notifications.git"
+    "url": "git+https://github.com/rodolfoquendo/js-notifications.git"
   },
   "author": "Insignia Education",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/insignia-education/js-notifications/issues"
+    "url": "https://github.com/rodolfoquendo/js-notifications/issues"
   },
-  "homepage": "https://github.com/insignia-education/js-notifications#readme"
+  "homepage": "https://github.com/rodolfoquendo/js-notifications#readme",
+  "dependencies": {
+    "@rodolfoquendo/js-core": "1.1.4",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "laravel-mix": "^6.0.49",
+    "ts-jest": "^29.2.5"
+  }
 }
