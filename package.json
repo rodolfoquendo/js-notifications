@@ -5,21 +5,25 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "jest ",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --runInBand --detectOpenHandles --forceExit",
     "build": "sass --style=compressed --force scss/index.scss:dist/rodolfoquendo-notifications.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodolfoquendo/js-notifications.git"
   },
-  "author": "Insignia Education",
+  "author": "Rodolfo Oquendo",
   "license": "ISC",
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/c/rodolfoquendo"
+  },
   "bugs": {
     "url": "https://github.com/rodolfoquendo/js-notifications/issues"
   },
   "homepage": "https://github.com/rodolfoquendo/js-notifications#readme",
   "dependencies": {
-    "@rodolfoquendo/js-core": "1.1.4",
+    "@rodolfoquendo/js-core": "1.1.8",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3"
   },

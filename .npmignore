@@ -3,3 +3,4 @@ Makefile
 node_modules
 coverage
 .sass-cache
+.DS_Store
