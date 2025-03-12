@@ -1,6 +1,6 @@
 // webpack.mix.js
 
 const mix = require('laravel-mix');
-mix
-    .js('lib/notification.js', 'dist/rodolfoquendo-notifications.js').setPublicPath('dist')
-    .sass('scss/index.scss', 'dist');
+mix.setPublicPath('dist')
+    .js('lib/Notification.js', 'dist/rodolfoquendo-notifications.js')
+    .sass('scss/index.scss', 'dist/rodolfoquendo-notifications.css');
