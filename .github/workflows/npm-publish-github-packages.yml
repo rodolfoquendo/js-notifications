@@ -22,6 +22,10 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org/'
       
+      - name: npm install
+        run: npm install
+
+      
       - name: build js
         run: npx mix --production
 
