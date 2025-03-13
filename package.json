@@ -1,12 +1,11 @@
 {
   "name": "@rodolfoquendo/js-notifications",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "a notifications system to show and manage html notifications, with report and click urls",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --runInBand --detectOpenHandles --forceExit",
-    "build": "sass --style=compressed --force scss/index.scss:dist/rodolfoquendo-notifications.css"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js  --runInBand --detectOpenHandles --forceExit"
   },
   "repository": {
     "type": "git",

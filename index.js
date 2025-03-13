@@ -2,11 +2,11 @@ import
 {
     is_null,
     isset
-} from "../node_modules/@rodolfoquendo/js-core/lib/Helpers.js";
+} from "@rodolfoquendo/js-core/lib/Helpers.js";
 import
 {
     _event
-} from "../node_modules/@rodolfoquendo/js-core/lib/EventListeners.js";
+} from "@rodolfoquendo/js-core/lib/EventListeners.js";
 
 export class Notification
 {

@@ -2,7 +2,7 @@ import
   {
     Notification,
     _notify
-  } from '../lib/Notification.js';
+  } from '../index.js';
 global.fetch = ( url, options ) => new Promise( ( resolve, reject ) =>
 {
   let xhr = new XMLHttpRequest();
