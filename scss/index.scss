@@ -1,1 +1,29 @@
-@import "Services/notification";
+$notifications_top: auto !default;
+$notifications_right: auto !default;
+$notifications_bottom: 0 !default;
+$notifications_left: 0 !default;
+$notifications_width: 100% !default;
+$notifications_height: auto !default;
+
+$notifications_notification_bg: #000 !default;
+$notifications_notification_color: #fff !default;
+$notifications_notification_padding: 1rem !default;
+$notifications_notification_margin: 0 !default;
+$notifications_notification_text_align: center !default;
+#notifications {
+  width: $notifications_width;
+  height: $notifications_height;
+  position: fixed;
+  top: $notifications_top;
+  right: $notifications_right;
+  bottom: $notifications_bottom;
+  left: $notifications_left;
+
+  .notification {
+    background-color: $notifications_notification_bg;
+    color: $notifications_notification_color;
+    padding: $notifications_notification_padding;
+    margin: $notifications_notification_margin;
+    text-align: $notifications_notification_text_align;
+  }
+}
