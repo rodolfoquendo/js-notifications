@@ -1,6 +1,6 @@
 {
   "name": "@rodolfoquendo/js-notifications",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a notifications system to show and manage html notifications, with report and click urls",
   "type": "module",
   "main": "index.js",
